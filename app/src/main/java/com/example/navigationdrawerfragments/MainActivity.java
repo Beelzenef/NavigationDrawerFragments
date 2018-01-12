@@ -1,5 +1,6 @@
 package com.example.navigationdrawerfragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -61,9 +62,11 @@ public class MainActivity extends AppCompatActivity implements FragmentTwo.OnFra
                         break;
                     case R.id.action_help:
                         pulsandoItem("ayuda");
+                        lanzarHelp();
                         break;
                     case R.id.action_settings:
                         pulsandoItem("configuración");
+                        lanzarSettings();
                         break;
                 }
                 // Mantenemos opción seleccionada y cambiamos title de toolbar
@@ -134,6 +137,14 @@ public class MainActivity extends AppCompatActivity implements FragmentTwo.OnFra
             fT.addToBackStack(null);
             fT.commit();
         }
+    }
+
+    private void lanzarHelp() {
+
+    }
+
+    private void lanzarSettings() {
+        startActivity(new Intent(MainActivity.this, SettingsActivity.class));
     }
 
     @Override
